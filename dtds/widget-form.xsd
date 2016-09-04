@@ -1715,6 +1715,7 @@ under the License.
     </xs:element>
     <xs:element name="upload" substitutionGroup="AllFields">
         <xs:complexType>
+            <xs:attribute type="xs:string" name="default-value" />
             <xs:attribute name="read-only" default="false">
                 <xs:annotation>
                     <xs:documentation>Makes this upload field read-only (no edits allowed)</xs:documentation>
