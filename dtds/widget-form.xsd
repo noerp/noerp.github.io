@@ -1738,6 +1738,17 @@ under the License.
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
+            <xs:attribute name="public" default="false">
+                <xs:annotation>
+                    <xs:documentation>Makes this upload field public (no donwload without login)</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true" />
+                        <xs:enumeration value="false" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
             <xs:attribute type="xs:string" name="file-extensions" />
         </xs:complexType>
     </xs:element>
