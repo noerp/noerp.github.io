@@ -577,15 +577,6 @@ under the License.
             <xs:attribute name="field-name" type="xs:string" use="required" />
         </xs:complexType>
     </xs:element>
-    <xs:element name="static-file" substitutionGroup="AllActions">
-        <xs:complexType>
-            <xs:attribute type="xs:string" name="field" use="required" />
-            <xs:attribute type="xs:string" name="from-field" />
-            <xs:attribute type="xs:string" name="value" />
-            <xs:attribute type="xs:string" name="component" use="required" />
-            <xs:attribute type="xs:string" name="webapp" />
-        </xs:complexType>
-    </xs:element>
     <xs:complexType name="link">
         <xs:sequence>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="parameter" />
