@@ -39,6 +39,16 @@ under the License.
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <!-- Reusable types -->
+    
+    <xs:simpleType name="booleanConst">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="true" />
+            <xs:enumeration value="false" />
+        </xs:restriction>
+    </xs:simpleType>
+    
     <xs:element name="include">
         <xs:annotation>
             <xs:documentation>
@@ -55,19 +65,16 @@ under the License.
     </xs:element>
     <xs:attributeGroup name="attlist.include">
         <xs:attribute type="xs:string" name="location" use="required"/>
-    </xs:attributeGroup>
-    <xs:element name="include-dynamic">
-        <xs:annotation>
-            <xs:documentation>
-                This includes controller.xml files from a service that return a list of controller location.
-            </xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:attributeGroup ref="attlist.include-dynamic"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:attributeGroup name="attlist.include-dynamic">
-        <xs:attribute type="xs:string" name="service" use="required"/>
+        <xs:attribute name="ignore-if-not-exists" type="booleanConst">
+	       <xs:annotation>
+	           <xs:documentation>
+	               Ignore the controller if not exists.
+	               Defaults to "false".
+	                   
+	               Optional. Attribute type: constant.
+	           </xs:documentation>
+	       </xs:annotation>
+	   </xs:attribute>
     </xs:attributeGroup>
     <xs:element name="description" type="xs:string"/>
     <xs:element name="owner" type="xs:string"/>
