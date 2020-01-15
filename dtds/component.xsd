@@ -37,6 +37,7 @@ under the License.
     <xs:attributeGroup name="attlist.component">
         <xs:attribute type="xs:string" name="name" use="required"/>
         <xs:attribute type="xs:string" name="vendor" use="required"/>
+        <xs:attribute type="xs:string" name="major-version" use="optional" default="1.0"/>
         <xs:attribute type="xs:string" name="enabled" use="optional" default="true"/>
     </xs:attributeGroup>
     <xs:element name="depends-on">
