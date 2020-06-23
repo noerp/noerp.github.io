@@ -978,7 +978,7 @@ under the License.
                 </xs:simpleType>
             </xs:attribute>
             <xs:attribute type="xs:string" name="default-value" />
-            <xs:attribute name="default-option-from" default="equals">
+            <xs:attribute name="default-option-from" default="greaterThanFromDayStart">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:enumeration value="equals" />
@@ -988,13 +988,35 @@ under the License.
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="default-option-thru" default="lessThan">
+            <xs:attribute name="default-option-thru" default="upThruDay">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:enumeration value="lessThan" />
                         <xs:enumeration value="upToDay" />
                         <xs:enumeration value="upThruDay" />
                         <xs:enumeration value="empty" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="hide-from-option" default="false">
+                <xs:annotation>
+                    <xs:documentation>If set to true, the from option will be hidden.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true" />
+                        <xs:enumeration value="false" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="hide-thru-option" default="false">
+                <xs:annotation>
+                    <xs:documentation>If set to true, the thru option will be hidden.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="true" />
+                        <xs:enumeration value="false" />
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
