@@ -1771,7 +1771,16 @@ under the License.
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute type="xs:string" name="file-extensions" />
+            <xs:attribute type="xs:string" name="accepted-files">
+                <xs:annotation>
+                    <xs:documentation>This is a comma separated list of mime types or file extensions. Eg.: image/*,application/pdf,.psd</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute type="xs:integer" name="max-file-size" default="20">
+                <xs:annotation>
+                    <xs:documentation>The max file size in MB, default 20M.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
         </xs:complexType>
     </xs:element>
 
