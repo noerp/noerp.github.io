@@ -159,13 +159,19 @@ under the License.
         </xs:attribute>
         <xs:attribute name="semaphore-wait-seconds" type="xs:int" default="300"/>
         <xs:attribute name="semaphore-sleep" type="xs:int" default="500"/>
-        <xs:attribute name="enable-audit-log" default="false" type="boolean">
+        <xs:attribute name="enable-audit-log" default="false">
             <xs:annotation>
                 <xs:documentation>
                     If this is set to true then when the service run success, it will make a record in the ServiceAuditLog entity.
                     Defaults to false.
                 </xs:documentation>
             </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="true"/>
+                    <xs:enumeration value="false"/>
+                </xs:restriction>
+            </xs:simpleType>
         </xs:attribute>
     </xs:attributeGroup>
     <xs:element name="notification">
