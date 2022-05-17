@@ -36,7 +36,7 @@ under the License.
     </xs:element>
     <xs:attributeGroup name="attlist.component">
         <xs:attribute type="xs:string" name="name" use="required"/>
-        <xs:attribute type="xs:string" name="vendor" use="required"/>
+        <xs:attribute type="xs:string" name="vendor" use="optional"/>
         <xs:attribute type="xs:string" name="enabled" use="optional" default="true"/>
         <xs:attribute type="xs:int" name="load-order" use="optional" default="0"/>
     </xs:attributeGroup>
