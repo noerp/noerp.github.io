@@ -55,6 +55,13 @@ under the License.
     </xs:element>
     <xs:attributeGroup name="attlist.include">
         <xs:attribute type="xs:string" name="location" use="required"/>
+        <xs:attribute type="xs:boolean" name="only-componet-enabled" default="false">
+            <xs:annotation>
+                <xs:documentation>
+                    Only include this controller.xml when the component enabled.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
     </xs:attributeGroup>
     <xs:element name="description" type="xs:string"/>
     <xs:element name="owner" type="xs:string"/>
